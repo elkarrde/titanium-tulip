@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../product';
-import { ProductService } from '../product.service'
+import { ProductService } from '../product.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
 
-export class ProductComponent implements OnInit {
-  products: Product[];
+export class DashboardComponent implements OnInit {
+  products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.getProducts();
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(products => this.products = products);
+    this.productService.getProducts()
+      .subscribe(products => this.products = products.slice(1, 3));
   }
 
   add(name: string, price: number, vendor: string, category: string): void {
@@ -38,10 +39,4 @@ export class ProductComponent implements OnInit {
         this.products.push(product);
       });
   }
-
-  delete(product: Product): void {
-    this.products = this.products.filter(h => h !== product);
-    this.productService.deleteProduct(product).subscribe();
-  }
-
 }

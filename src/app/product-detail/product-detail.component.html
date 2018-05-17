@@ -1,0 +1,49 @@
+<div *ngIf="product">
+
+  <div class="product card col-6 px-1 mr-2 mb-2">
+    <div class="card-body">
+      <section class="card-title">
+        <small class="badge badge-pill badge-secondary float-right">{{product.id}}</small>
+        <h3>{{ product.name }}</h3>
+      </section>
+      <section class="content card-text clearfix">
+       <div class="form-group name">
+          <label for="inputName">Name: </label>
+          <input type="text" class="form-control" id="inputName" [(ngModel)]="product.name" placeholder="Name"/>
+        </div>
+       <div class="form-group price">
+          <label for="inputPrice">Price: </label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">¤</div>
+            </div>
+            <input type="text" class="form-control" id="inputPrice" [(ngModel)]="product.price" placeholder="Price"/>
+          </div>
+        </div>
+        <div class="form-group vendor">
+          <label for="inputVendor">Vendor: </label>
+          <input type="text" class="form-control" id="inputVendor" [(ngModel)]="product.vendor" placeholder="Vendor"/>
+        </div>
+        <div class="form-group category">
+          <label for="inputCategory">Category: </label>
+          <select class="custom-select my-1 mr-sm-2" id="inputCategory" [(ngModel)]="product.category">
+            <option selected>Choose...</option>
+            <option value="spice">Spice</option>
+            <option value="food">Food</option>
+            <option value="fuel">Fuel</option>
+            <option value="cosmetics">Cosmetics</option>
+            <option value="juices">Juices</option>
+            <option value="confectionery">Confectionery</option>
+            <option value="ice-cream">Ice-cream</option>
+            <option value="coffee">Coffee</option>
+          </select>
+        </div>
+      </section>
+      <hr>
+      <button type="button" class="btn btn-success px-3 mr-2" (click)="save()">Save</button>
+      <button type="button" class="btn btn-danger px-3 mr-2" (click)="delete(product)">Delete</button>
+      <button type="button" class="btn btn-link" (click)="goBack()">Back</button>
+    </div>
+  </div>
+
+</div>

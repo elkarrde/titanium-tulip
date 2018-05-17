@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Titanium Tulip';
+  title = 'Project Titanium Tulip';
 }

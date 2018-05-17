@@ -1,9 +1,7 @@
-<div class="product-list row px-3">
-
+<div class="grid row px-3 mt-3 mb-1">
   <div *ngFor="let product of products" class="product card col-3 px-1 mr-2 mb-2">
     <div class="card-body">
       <section class="card-title">
-        <small class="badge badge-pill badge-secondary float-right">{{product.id}}</small>
         <h3>{{ product.name }}</h3>
       </section>
       <section class="content card-text clearfix">

@@ -18,25 +18,24 @@ An app should have following screens:
 Employ Angular to build an interactive webpage. For the sake of simplicity, use mocked data and store user data in the browser local storage.
 
 ## Application screen contents
-1. Landing screen
+1. **Landing screen**
   - list of entered products,
   - add new button.
-2. Add-new screen
+2. **Add-new screen**
   - input fields for product information,
   - add button,
-  - clear all fields button,
   - close/back button.
-3. Single product screen
+3. **Single product screen**
   - product overview areas,
   - compare button,
   - close/back button.
-4. Compare screen
+4. **Compare screen**
   - area for information about main product,
   - area for a list of comparable products,
   - close/back button.
 
 ## Data description
-Product:
+**Product**:
 - name,
 - price,
 - vendor name and location,

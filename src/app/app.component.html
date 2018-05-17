@@ -1,9 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="container">
-  <h1>{{title}}</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><strong>{{title}}</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/products">All products</a>
+      </li>
+    </ul>
+  </div>
+  <app-product-search></app-product-search>
+</nav>
 
+<div class="container mt-3 mb-5">
   <div class="products-list">
-    <app-product></app-product>
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="hide">
+    <app-messages></app-messages>
   </div>
 </div><!-- /.container -->
