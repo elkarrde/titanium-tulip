@@ -1,0 +1,21 @@
+<div class="product-list row">
+  <div *ngFor="let product of products" class="product card col-3 m-1">
+    <div class="card-body">
+      <section class="card-title">
+        <small class="badge badge-pill badge-secondary float-right">{{product.id}}</small>
+        <h3>{{ product.name }}</h3>
+      </section>
+      <section class="content card-text clearfix">
+       <div class="price">
+          <span>Price: </span><strong>{{product.price}}¤</strong>
+        </div>
+        <div class="vendor">
+          <strong>{{product.vendor}}</strong>
+        </div>
+        <div class="category">
+          <span class="badge badge-primary">{{product.category | uppercase}}</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
