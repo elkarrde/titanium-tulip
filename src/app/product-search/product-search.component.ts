@@ -5,6 +5,9 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
+import "jquery";
+declare const jQuery: JQueryStatic;
+
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
@@ -21,7 +24,7 @@ export class ProductSearchComponent implements OnInit {
     this.searchTerms.next(term);
 
     let topPos = jQuery('#search-box').position().top + 35;
-    let width = jQuery('#search-box').outerWidth() + 3;
+    let width = jQuery('#search-box').outerWidth();
     jQuery('.search-result').css({top: topPos + 'px'});
     jQuery('.search-result li').css({width: width + 'px'});
   }
