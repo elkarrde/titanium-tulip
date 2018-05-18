@@ -17,9 +17,17 @@ export class ProductSearchComponent implements OnInit {
 
   constructor(private productService: ProductService) {}
 
-  // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
+
+    let topPos = jQuery('#search-box').position().top + 35;
+    let width = jQuery('#search-box').outerWidth() + 3;
+    jQuery('.search-result').css({top: topPos + 'px'});
+    jQuery('.search-result li').css({width: width + 'px'});
+  }
+
+  clearResults(): void {
+    this.searchTerms.next('');
   }
 
   ngOnInit(): void {

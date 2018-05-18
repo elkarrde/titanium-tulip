@@ -3,8 +3,8 @@
     <input #searchBox id="search-box" class="form-control mr-sm-2" type="search" placeholder="Search" (keyup)="search(searchBox.value)">
     <ul class="search-result">
       <li *ngFor="let product of products$ | async" >
-        <a routerLink="/product/{{product.id}}">
-          {{product.name}} ({{product.price}})
+        <a routerLink="/product/{{product.id}}" (click)="clearResults(); searchBox.value='';">
+          {{ product.name }}, <strong>{{ product.price }}¤</strong>, {{ product.vendor }}
         </a>
       </li>
     </ul>

@@ -3,13 +3,12 @@
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
-  width:193px;
-  height: 2rem;
+  min-width: 193px;
   padding: 5px;
   background-color: white;
   cursor: pointer;
   list-style-type: none;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 
 .search-result li:hover {
@@ -34,4 +33,5 @@ ul.search-result {
   padding-left: 0;
   position: absolute;
   top: 44px;
+  z-index: 5;
 }
